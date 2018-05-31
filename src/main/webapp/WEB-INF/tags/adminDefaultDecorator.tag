@@ -48,7 +48,7 @@
 					<a href="#" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							SM
+							File Bank
 						</small>
 					</a>
 				</div>
