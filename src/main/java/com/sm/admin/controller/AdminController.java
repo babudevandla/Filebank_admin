@@ -1,9 +1,12 @@
 package com.sm.admin.controller;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sm.admin.common.CommonController;
+import com.sm.admin.model.Users;
+import com.sm.admin.service.UserService;
 
 @Controller
 @RequestMapping("/admin")
@@ -18,6 +23,8 @@ public class AdminController extends CommonController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
+	@Autowired
+	UserService userService;
 	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String home(Model model){
@@ -51,11 +58,12 @@ public class AdminController extends CommonController {
 	}
 	
 	@RequestMapping(value="/dashboard",method=RequestMethod.GET)
-	public String adminDashboard(Model model){
+	public String adminDashboard(Model model,Principal principal){
 		logger.info("adminDashboard page");
 		/*Long usersCount=userService.getRegistedUsersCount();*/
 		
-		
+		Users user=userService.findUserByUserName(principal.getName());
+		model.addAttribute("user", user);
 		model.addAttribute("dashActive", true);
 		return "admin/adminDashboard";
 	}

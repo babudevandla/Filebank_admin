@@ -60,7 +60,7 @@
 								<img class="nav-user-photo" src="${contextPath}/resources/admin/dist/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									${user.firstName}
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -75,7 +75,7 @@
 								</li>
 
 								<li>
-									<a href="profile.html">
+									<a href="${contextPath}/admin/profile">
 										<i class="ace-icon fa fa-user"></i>
 										Profile
 									</a>
@@ -130,9 +130,9 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
-					<li class="${propertyActive?'active':''}">
-						<a href="#" >
-							<i class="ace-icon glyphicon glyphicon-user"></i>
+					<li class="${usersStatus?'active':''}">
+						<a href="${contextPath}/admin/user_list" >
+							<i class="menu-icon fa fa-user"></i>
 							<span class="menu-text">
 								User Management
 							</span>
@@ -157,15 +157,15 @@
 						</a>
 						<b class="arrow"></b>
 					</li> --%>
-					<%-- <li class="${blogsActive?'active':''}">
+					<li class="${blogsActive?'active':''}">
 						<a href="${contextPath}/admin/blogs-list" >
-							<i class="ace-icon fa fa-desktop"></i>
+							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
 								Blogs Management
 							</span>
 						</a>
 						<b class="arrow"></b>
-					</li> --%>
+					</li>
 					<%-- <li class="${propertyActive?'active':''}">
 						<a href="#" >
 							<i class="ace-icon fa fa-cog"></i>
@@ -188,8 +188,8 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">SM</span>
-							Portal &copy; 2017-2018
+							<span class="blue bolder">FileBank</span>
+							Portal &copy; 2018-2019
 						</span>
 
 					<!-- 	&nbsp; &nbsp;
@@ -257,6 +257,8 @@
 		<script src="${contextPath}/resources/admin/components/jquery-inputlimiter/jquery.inputlimiter.min.js"></script>
 		<script src="${contextPath}/resources/admin/components/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
 		<script src="${contextPath}/resources/admin/components/_mod/bootstrap-tag/bootstrap-tag.min.js"></script>
+		
+	
 		
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">

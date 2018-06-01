@@ -1,5 +1,9 @@
 package com.sm.admin.dao;
 
+import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -102,6 +106,30 @@ public class UserDaoImpl implements UserDao {
 		if(logger.isTraceEnabled())
 			logger.info("UserDaoImpl === findUserByUserName == end");
 		return user;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<UsersDto> getCustomersList(Principal principal) {
+		List<Users> users=(List<Users>) sessionFactory.getCurrentSession().createQuery("from Users where userName!=:userName")
+				.setParameter("userName", principal.getName()).list();	 
+		List<UsersDto> userslist=new ArrayList<>();
+		for(Users user:users){
+			UsersDto info=new UsersDto();
+			info.setFirstname(user.getFirstName());
+			info.setLastname(user.getLastname());
+			info.setMobile_no(user.getMobile_no());
+			info.setEmail(user.getEmail());
+			info.setPassword(user.getPassword());
+			info.setUsername(user.getUserName());
+			info.setCountry(user.getCountry());
+			info.setState(user.getState());
+			info.setCity(user.getCity());
+			info.setPhoneNumber(user.getPhoneNumber());
+			info.setZipCode(user.getZipCode());
+			userslist.add(info);
+		}
+		return userslist;
 	}
 
 	

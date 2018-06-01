@@ -1,5 +1,8 @@
 package com.sm.admin.service;
 
+import java.security.Principal;
+import java.util.List;
+
 import com.sm.admin.dto.UsersDto;
 import com.sm.admin.model.Captcha;
 import com.sm.admin.model.Users;
@@ -14,4 +17,5 @@ public interface UserService {
 	Users checkDynamicAccessCode(UsersDto userDto);
 	void updateUserInfo(UsersDto userDto);
 	void updateDynamicCode(String dynamicCode, UsersDto users);
+	List<UsersDto> getCustomersList(Principal principal);
 }

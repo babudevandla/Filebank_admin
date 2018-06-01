@@ -1,5 +1,8 @@
 package com.sm.admin.service;
 
+import java.security.Principal;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,7 +40,7 @@ public class UserServiceImpl extends CommonController implements UserService {
 	public Integer saveUser(UsersDto users) {
 		
 		Users info=new Users();
-		info.setFirstname(users.getFirstname());
+		info.setFirstName(users.getFirstname());
 		info.setLastname(users.getLastname());
 		info.setMobile_no(users.getMobile_no());
 		info.setDateofbirth(stringtoDate(users.getBirthday_year()+"-"+users.getBirthday_month()+"-"+users.getBirthday_date()));
@@ -71,6 +74,11 @@ public class UserServiceImpl extends CommonController implements UserService {
 	@Override
 	public Users getUserByUsernamePassword(UsersDto usersDto) {
 		return userDao.getUserByUsernamePassword(usersDto);
+	}
+
+	@Override
+	public List<UsersDto> getCustomersList(Principal principal) {
+		return userDao.getCustomersList(principal);
 	}
 
 }

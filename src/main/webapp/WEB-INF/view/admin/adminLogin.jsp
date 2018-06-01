@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sign in | SM</title>
+    <title>Sign in | FileBank</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta content='text/html;charset=utf-8' http-equiv='content-type'>
     <meta content='Easy Living Administration' name='description'>
@@ -20,99 +20,6 @@
 	<link rel="stylesheet" href="${contextPath}/resources/admin/dist/css/ace-rtl.min.css" />
 
  </head>
-  <%-- <body class='contrast-red login contrast-background'>
-    <div class='middle-container'>
-      <div class='middle-row'>
-        <div class='middle-wrapper'>
-          <div class='login-container-header'>
-            <div class='container'>
-              <div class='row'>
-                <div class='col-sm-12'>
-                  <div class='text-center'>
-                    Easy Living
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='login-container'>
-            <div class='container'>
-              <div class='row'>
-                <div class='col-sm-4 col-sm-offset-4'>
-                  <h1 class='text-center title'>Sign in</h1>
-                    <c:if test="${not empty message}">
-					   <div class="alert alert-success fade in" id="sucessMsg">
-						  <a href="#" class="close" data-dismiss="alert">&times;</a>
-						    ${message}
-					   </div>
-					 </c:if>
-					 <c:if test="${not empty error}">
-					    <div class="alert alert-error" ><span style="color: red;" > 
-							${sessionScope['SPRING_SECURITY_LAST_EXCEPTION'].message} !! Enter correct Email and password</span>
-						</div>
-					</c:if> 
-					<c:if test="${accessDeined}">
-					   <div class="alert alert-error" ><span style="color: red;" > 
-							 !! Access Denied Please provide valid Email and Password</span>
-					   </div>
-					</c:if> 
-                  <form action='<c:url value='/admin/j_spring_security_check' />' class='validate-form' method='post'>
-                    <div class='form-group'>
-                      <div class='controls with-icon-over-input'>
-                        <input placeholder="E-mail" class="form-control" data-rule-required="true" name="j_username" type="text" />
-                        <i class='icon-user text-muted'></i>
-                      </div>
-                    </div>
-                    <div class='form-group'>
-                      <div class='controls with-icon-over-input'>
-                        <input placeholder="Password" class="form-control" data-rule-required="true" name="j_password" type="password" />
-                        <i class='icon-lock text-muted'></i>
-                      </div>
-                    </div>
-                    
-                    <input type="submit" class='btn btn-block' value="Sign in">
-                  </form>
-                  <div class='text-center'>
-                    <hr class='hr-normal'>
-                    <a href='${contextPath}/admin/forgot-password'>Forgot your password?</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='login-container-footer'>
-            <div class='container'>
-              <div class='row'>
-                <div class='col-sm-12'>
-                  <div class='text-center'>
-                   <!--  <a href='sign_up.html'>
-                      <i class='icon-user'></i>
-                      New to Flatty?
-                      <strong>Sign up</strong>
-                    </a> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-   </div>
-    
-    <script src="${contextPath}/resources/admin/assets/javascripts/jquery/jquery.min.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/jquery/jquery.mobile.custom.min.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/jquery/jquery-migrate.min.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/jquery/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/plugins/jquery_ui_touch_punch/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/bootstrap/bootstrap.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/plugins/modernizr/modernizr.min.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/plugins/retina/retina.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/theme.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/demo.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/plugins/validate/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="${contextPath}/resources/admin/assets/javascripts/plugins/validate/additional-methods.js" type="text/javascript"></script>
-  </body> --%>
-  
   <body class="login-layout">
 		<div class="main-container">
 			<div class="main-content">
@@ -122,10 +29,10 @@
 							<div class="center">
 								<h1>
 									<i class="ace-icon fa fa-leaf green"></i>
-									<span class="red">Ace</span>
-									<span class="white" id="id-text2">Application</span>
+									<span class="red">FileBank</span>
+									<span class="white" id="id-text2">Admin</span>
 								</h1>
-								<h4 class="blue" id="id-company-text">&copy; Company Name</h4>
+								<h4 class="blue" id="id-company-text">&copy; SM</h4>
 							</div>
 
 							<div class="space-6"></div>
@@ -175,14 +82,14 @@
 													<div class="space"></div>
 
 													<div class="clearfix">
-														<label class="inline">
+														<!-- <label class="inline">
 															<input type="checkbox" class="ace" />
 															<span class="lbl"> Remember Me</span>
-														</label>
+														</label> -->
 
-														<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+														<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
 															<i class="ace-icon fa fa-key"></i>
-															<input type="submit" class="bigger-110" value="Login">
+															Login
 														</button>
 													</div>
 
@@ -190,26 +97,8 @@
 												</fieldset>
 											</form>
 
-											<div class="social-or-login center">
-												<span class="bigger-110">Or Login Using</span>
-											</div>
-
-											<div class="space-6"></div>
-
-											<div class="social-login center">
-												<a class="btn btn-primary">
-													<i class="ace-icon fa fa-facebook"></i>
-												</a>
-
-												<a class="btn btn-info">
-													<i class="ace-icon fa fa-twitter"></i>
-												</a>
-
-												<a class="btn btn-danger">
-													<i class="ace-icon fa fa-google-plus"></i>
-												</a>
-											</div>
-										</div><!-- /.widget-main -->
+											
+										</div>
 
 										<div class="toolbar clearfix">
 											<div>
