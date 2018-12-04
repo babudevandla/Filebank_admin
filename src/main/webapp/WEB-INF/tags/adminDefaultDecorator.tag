@@ -60,7 +60,7 @@
 								<img class="nav-user-photo" src="${contextPath}/resources/admin/dist/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									${user.firstName}
+									${user.firstname}
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -139,24 +139,33 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
-					<%-- <li class="${propertyActive?'active':''}">
-						<a href="${contextPath}/admin/property-listings" >
-							<i class="menu-icon fa fa-desktop"></i>
+					<li class="${propertyActive?'active':''}">
+						<a href="#" >
+							<i class="menu-icon fa fa-file" aria-hidden="true"></i>
 							<span class="menu-text">
-								Property Listing
+								File Management
 							</span>
 						</a>
 						<b class="arrow"></b>
 					</li>
 					<li class="${agentlistActive?'active':''}">
-						<a href="${contextPath}/admin/agents-list" >
-							<i class="menu-icon fa fa-desktop"></i>
+						<a href="#" >
+							<i class="menu-icon fa fa-calendar-o" ></i>
 							<span class="menu-text">
-								Manage Agent Listing
+								EDairy Management
 							</span>
 						</a>
 						<b class="arrow"></b>
-					</li> --%>
+					</li> 
+					<li class="${agentlistActive?'active':''}">
+						<a href="#" >
+							<i class="menu-icon fa fa-book" ></i>
+							<span class="menu-text">
+								EBook Management
+							</span>
+						</a>
+						<b class="arrow"></b>
+					</li> 
 					<li class="${blogsActive?'active':''}">
 						<a href="${contextPath}/admin/blogs-list" >
 							<i class="menu-icon fa fa-desktop"></i>

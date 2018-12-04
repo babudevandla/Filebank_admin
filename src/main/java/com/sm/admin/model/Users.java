@@ -27,7 +27,7 @@ public class Users implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Integer userId;
-	private String firstName;
+	private String firstname;
 	private String profileImage;
 	private String modifiedImage;
 	private String about;
@@ -66,10 +66,10 @@ public class Users implements java.io.Serializable {
 		this.userId = userId;
 	}
 
-	public Users(String firstName, String lastname, String email,
+	public Users(String firstname, String lastname, String email,
 			String password, boolean enabled, String role, Date createdDate,
 			List<Role> roles) {
-		this.firstName = firstName;
+		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
 		this.password = password;
@@ -90,12 +90,12 @@ public class Users implements java.io.Serializable {
 	}
 
 	@Column(name = "firstname")
-	public String getFirstName() {
-		return firstName;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
 	@Column(name = "lastname")

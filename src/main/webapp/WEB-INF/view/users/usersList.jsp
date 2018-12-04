@@ -100,9 +100,7 @@
 				</div>
 			</div>
 		</div>
-				<div align="right">
-					<a href="${contextPath}/admin/create-blog" class="btn btn-purple" > Create Blog</a>
-				</div>
+				
 					<div class="row">
 						<div class="col-xs-12">
 								<div class="row">
@@ -136,7 +134,7 @@
 													</tr>
 												</thead>
 												<tbody>
-												  <c:forEach  var="cust"   items="userslist" varStatus="status">	
+												  <c:forEach items="${userslist}"  var="customer"   varStatus="status">	
 													<tr>
 														<td class="center">
 															<label class="pos-rel">
@@ -146,14 +144,14 @@
 														</td>
 
 														<td>
-															<a href="#">${cust.firstname}</a>
+															<a href="#">${customer.firstname}</a>
 														</td>
-														<td>${cust.lastname}</td>
-														<td>${cust.email}</td>
-														<td class="hidden-480">${cust.mobile_no}</td>
-														<td>${cust.username}</td>
-                                                        <td>${cust.city}</td>
-														<td>${cust.enabled}</td>
+														<td>${customer.lastname}</td>
+														<td>${customer.email}</td>
+														<td class="hidden-480">${customer.mobile_no}</td>
+														<td>${customer.username}</td>
+                                                        <td>${customer.city}</td>
+														<td>${customer.enabled}</td>
 													</tr> 
 													</c:forEach>  
 												</tbody>

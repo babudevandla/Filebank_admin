@@ -116,7 +116,7 @@ public class UserDaoImpl implements UserDao {
 		List<UsersDto> userslist=new ArrayList<>();
 		for(Users user:users){
 			UsersDto info=new UsersDto();
-			info.setFirstname(user.getFirstName());
+			info.setFirstname(user.getFirstname());
 			info.setLastname(user.getLastname());
 			info.setMobile_no(user.getMobile_no());
 			info.setEmail(user.getEmail());

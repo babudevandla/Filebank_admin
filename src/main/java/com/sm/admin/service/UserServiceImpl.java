@@ -40,7 +40,7 @@ public class UserServiceImpl extends CommonController implements UserService {
 	public Integer saveUser(UsersDto users) {
 		
 		Users info=new Users();
-		info.setFirstName(users.getFirstname());
+		info.setFirstname(users.getFirstname());
 		info.setLastname(users.getLastname());
 		info.setMobile_no(users.getMobile_no());
 		info.setDateofbirth(stringtoDate(users.getBirthday_year()+"-"+users.getBirthday_month()+"-"+users.getBirthday_date()));

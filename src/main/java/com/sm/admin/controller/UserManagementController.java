@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sm.admin.dto.UsersDto;
+import com.sm.admin.model.Users;
 import com.sm.admin.service.UserService;
 
 @Controller
